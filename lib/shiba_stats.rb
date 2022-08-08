@@ -12,6 +12,12 @@ class ShibaStats
   end
 
   def self.time_series(key)
-    Redis::TimeSeries.new(key)
+    redis ||= Redis.new(
+      :host => ENV["REDIS_HOST"],
+      :port => ENV["REDIS_PORT"],
+      :password => ENV["REDIS_PASSWORD"]
+    )
+    Redis::TimeSeries.new(key, redis: redis)
   end
+
 end
