@@ -10,6 +10,8 @@ A small library for measuring stuff.
 gem 'shiba_stats'
 ```
 
+ShibaStats reads from the REDIS_URL, REDIS_PORT and REDIS_PASSWORD ENV variables.
+
 ## Recording Data
 Increment a key:
 ```
